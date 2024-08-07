@@ -1,0 +1,44 @@
+# See: https://it-choice.atlassian.net/wiki/spaces/KUB/pages/20356619/Datenbank-Update+Linux
+[server]
+
+# Required 
+character-set-server                = utf8mb4
+collation-server                    = utf8mb4_general_ci
+innodb-flush-log-at-trx-commit      = 1
+innodb-flush-method                 = O_DIRECT
+innodb-strict-mode                  = 0
+max-allowed-packet                  = 500M
+max-connections                     = 500
+sql-mode                            = STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+transaction-isolation               = READ-COMMITTED
+
+# Recommended 
+bulk-insert-buffer-size             = 100M
+concurrent-insert                   = 2
+histogram_size                      = 254
+histogram_type                      = DOUBLE_PREC_HB
+innodb-file-per-table               = 1
+innodb-log-buffer-size              = 256M
+innodb-print-all-deadlocks          = 1
+innodb-table-locks                  = 0
+join-buffer-size                    = 32M
+key-buffer-size                     = 16M
+long-query-time                     = 0.100
+max-heap-table-size                 = 32M
+optimizer-search-depth              = 4
+optimizer-switch                    = materialization=on,semijoin=on
+optimizer-use-condition-selectivity = 4
+performance-schema                  = 1
+query-cache-size                    = 0
+query-cache-type                    = 0
+read-buffer-size                    = 8M
+read-rnd_buffer-size                = 8M
+slow-query-log                      = 1
+sort-buffer-size                    = 8M
+symbolic-links                      = 0
+table-definition-cache              = 1024
+table-open-cache                    = 512
+thread-cache-size                   = 4
+thread-stack                        = 256k
+tmp-table-size                      = 128M
+use_stat_tables                     = preferably
