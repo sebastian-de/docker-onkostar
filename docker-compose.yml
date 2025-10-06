@@ -25,7 +25,7 @@ services:
       # Config file
       - "./configs/server.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf"
       # Database dumps for initial database seed
-      - "./initdb-backup.d:/docker-entrypoint-initdb.d:ro"
+      - "./initdb.d:/docker-entrypoint-initdb.d:ro"
     environment:
       MARIADB_DATABASE: onkostar
       MARIADB_USER: onkostar
